@@ -240,9 +240,7 @@ class _BaseMixUpCutMix(Transform):
         if not isinstance(labels, torch.Tensor):
             raise ValueError(f"The labels must be a tensor, but got {type(labels)} instead.")
         elif labels.ndim != 1:
-            raise ValueError(
-                f"labels tensor should be of shape (batch_size,) " f"but got shape {labels.shape} instead."
-            )
+            raise ValueError(f"labels tensor should be of shape (batch_size,) but got shape {labels.shape} instead.")
 
         params = {
             "labels": labels,

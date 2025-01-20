@@ -111,8 +111,7 @@ def register_kernel(functional, ta_tensor_cls):
 
     if not (isinstance(ta_tensor_cls, type) and issubclass(ta_tensor_cls, ta_tensors.TATensor)):
         raise ValueError(
-            f"Kernels can only be registered for subclasses of ~torchaug.ta_tensors.TATensor, "
-            f"but got {ta_tensor_cls}."
+            f"Kernels can only be registered for subclasses of ~torchaug.ta_tensors.TATensor, but got {ta_tensor_cls}."
         )
 
     if ta_tensor_cls in _BUILTIN_DATAPOINT_TYPES:
@@ -139,8 +138,7 @@ def _get_kernel(functional, input_type, *, allow_passthrough=False):
         return lambda inpt, *args, **kwargs: inpt
 
     raise TypeError(
-        f"Functional F.{functional.__name__} supports inputs of type {registry.keys()}, "
-        f"but got {input_type} instead."
+        f"Functional F.{functional.__name__} supports inputs of type {registry.keys()}, but got {input_type} instead."
     )
 
 
